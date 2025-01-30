@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes loading {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+ ul {
+        list-style-type: none; /* Elimina los puntos de las listas no ordenadas */
+        padding: 0; /* Elimina el padding predeterminado */
+        margin: 0; /* Elimina el margen predeterminado */
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Menu */
+.contenedor-header {
+    background: #00FFFF;
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    box-shadow: 0 0 15px #00FFFF; /* Efecto neón en el menú */
+}
+
+body {
+    padding-top: 8px;
+}
+
+.contenedor-header header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.contenedor-header header .logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    color: #8A2BE2;
+    margin: 0;
+
+}
+
+.contenedor-header header ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor-header header nav ul li a {
+    text-align: none;
+    color: #8A2BE2;
+    margin: 0 15px;
+    padding: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contenedor-header header nav ul li a:hover {
+    color: #FF00FF;
+    text-shadow: 0 0 10px #FF00FF; /* Efecto neón al pasar el cursor */
+}
+
+.nav-responsive {
+    background-color: #00FFFF;
+    color: #8A2BE2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.contenedor-header header .nav {
+    flex-grow: 1;
+}
+
+/* Seccion Inicio */
+.inicio {
+    background: linear-gradient(to top, rgba(0, 255, 255, 0.2), rgba(138, 43, 226, 0.6)), url("img/Fondo.png");
+    background-size: cover;
+    height: 100vh;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.inicio .contenido-banner {
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow: 0 0 15px #FF00FF; /* Efecto neón en el banner */
+}
+
+.inicio .contenido-banner h1 {
+    margin-top: 40px;
+    font-size: 42px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título */
+}
+
+.inicio .contenido-banner h2 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.inicio .contenido-banner .redes a {
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+    width: 25px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.inicio .contenido-banner .redes a:hover {
+    background-color: #00FFFF;
+    transform: scale(1.9);
+}
+
+.contenedor-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contenedor-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* Seccion Sobre Mi */
+.sobremi {
+    background-color: #00FFFF;
+    color: #8A2BE2;
+    padding: 50px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translate(0px);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.sobremi .visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sobremi .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sobremi h2 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el subtítulo */
+}
+
+.sobremi .contenido-seccion p {
+    font: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+.sobremi .contenido-seccion p span {
+    color: #FF00FF;
+    font-weight: bold;
+}
+
+.sobremi .fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sobremi .fila .col {
+    width: 48%;
+}
+
+.sobremi .fila .col h3 {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados */
+}
+
+.sobremi .fila .col ul {
+    list-style: circle;
+}
+
+.sobremi .fila .col ul li {
+    margin: 12px 0;
+}
+
+.sobremi .fila .col ul li strong {
+    display: inline-block;
+    color: #FF00FF;
+    width: flex 1 1 auto;
+}
+
+.sobremi .fila .col .ul li span {
+    background-color: black;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.sobremi .fila .contenedor-intereses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.interes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 15px 15px 0;
+    border-radius: 10px;
+    justify-content: center;
+    transition: .3s;
+    padding: 1px;
+}
+
+.interes:hover {
+    background-color: #8A2BE2;
+    color: #00FFFF;
+    box-shadow: 0 0 15px #FF00FF; /* Efecto neón al pasar el cursor */
+}
+
+.interes i {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.sobremi button {
+    cursor: pointer;
+    background-color: #00FFFF;
+    color: #8A2BE2;
+    border: solid 2px #FF00FF;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    transition: color;
+}
+
+.sobremi button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 0, 255, 0.5);
+    transform: translateY(0%);
+    z-index: 1;
+    transition: 2s;
+}
+
+.sobremi button:hover .overlay {
+    width: 100%;
+}
+
+/* Seccion Skills */
+.skills {
+    background-color: #8A2BE2;
+    color: #00FFFF;
+    padding: 50px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translate(0px);
+}
+
+.skills .visible {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.skills .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.skills h2 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título de habilidades */
+}
+
+.skills .fila {
+    display: flex;
+}
+
+.skills .fila .col {
+    width: 50%;
+    padding: 0 20px;
+}
+
+.skills .fila .col h3 {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados de habilidades */
+}
+
+.skills .skill > span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Seccion Formacion */
+.formacion {
+    background-color: #00FFFF;
+    color: #8A2BE2;
+    padding: 5px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translate(0px);
+}
+
+.formacion .visible {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.formacion h2 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título de la sección */
+}
+
+.formacion .fila .col h3 {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados de formación */
+}
+
+.formacion .fila .item h4 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los títulos de los cursos */
+}
+
+.formacion .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.formacion .fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formacion .fila .col {
+    width: 48%;
+    padding: 0 20px;
+}
+
+.formacion .fila .izquierda {
+    border-right: 2px solid #8A2BE2;
+}
+
+.formacion .fila .derecha {
+    border-left: 2px solid #8A2BE2;
+}
+
+.formacion .centrar-imagen {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.formacion .fila .item {
+    padding: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 0 15px #FF00FF; /* Efecto neón en los elementos de formación */
+}
+
+.formacion .fila .item .casa {
+    color: #FF00FF;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+
+.formacion .fila .item .fecha {
+    display: block;
+    color: #8A2BE2;
+    margin-bottom: 10px;
+}
+
+.formacion .fila .item p {
+    line-height: 24px;
+}
+
+.formacion .fila .item .conectori {
+    height: 2px;
+    background-color: #FF00FF;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; /* Efecto de brillo */
+    margin-top: 10px;
+}
+
+.formacion .fila .item .conectori .circuloi {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #FF00FF;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+
+.formacion .fila .item .conectord {
+    height: 2px;
+    background-color: #FF00FF;
+    width: 100%; /* Ajustar al 100% del contenedor */
+    position: relative; /* Cambiado a relative para evitar superposiciones */
+    z-index: 5;
+    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; /* Efecto de brillo */
+    margin-top: 10px; /* Espaciado superior para evitar superposición con texto */
+}
+
+.formacion .fila .item .conectord .circulod {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #FF00FF;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
