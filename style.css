@@ -345,7 +345,7 @@ body {
     text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados de habilidades */
 }
 
-.skills .skill > span {
+.skills .skill > btn-download {
     font-weight: bold;
     display: block;
     margin-bottom: 10px;
@@ -395,6 +395,7 @@ body {
 .formacion .fila {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .formacion .fila .col {
@@ -483,3 +484,274 @@ body {
     position: relative;
     bottom: 4px;
 }
+/*--Seccion Portfolio-->*/
+.portfolio {
+    background-color: #8A2BE2;
+    color: #00FFFF;
+    padding: 50px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translate(0px);
+}
+.portfolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.portfolio h2{
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título de la sección */
+}
+.portfolio .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.portfolio .galeria .proyecto{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+.portfolio .galeria .proyecto img{
+    width: 100%;
+    display: block;
+}
+.portfolio .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(255, 0, 255, 0.8), rgba(0, 255, 255, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.portfolio .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.portfolio .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+.portfolio .galeria .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+
+}
+
+
+/*Seccion Contacto*/
+.contacto {
+    background-image: url(/img/contact_bg.png);
+    background-color: #00FFFF ;
+    color: #8A2BE2;
+    padding: 50px 0;
+    text-shadow: 0 0 15px #FF00FF;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translate(0px);
+}
+.contacto .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+}
+.contacto .fila{
+    display: flex;
+}
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+
+}
+.contacto.col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #8A2BE2;
+    color: #FF00FF;
+    font-size: 18px;
+}
+.contacto button{
+cursor: pointer;
+background-color: transparent;
+border: 2px solid #8A2BE2;
+box-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+width: fit-content;
+display: block;
+margin: 20px auto;
+padding: 10px 20px;
+font-size: 16px;
+color: #ffffff;
+position: relative;
+z-index: 10;
+}
+.contacto button .overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #8A2BE2;
+    z-index: -1;
+    transition: 1s;
+}
+.contacto button:hover .overlay{
+    width: 100%;
+}
+.contacto .col img{
+    width: 100%;
+}
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: transparent;
+    padding: 20px;
+    max-width: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contacto .col .info ul{
+    list-style: none;
+}
+.contacto .col .info ul il {
+    margin-bottom: 30px;
+}
+.contacto .col ul li i{
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/*Footer*/
+footer {
+    background-color: #8A2BE2;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #8A2BE2;
+    border: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+footer .redes a{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #8A2BE2;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6600;
+    color: #00FFFF;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    text-align: 50px;
+    font: 18px;
+}
+/* SECCION RESPONSIVE */
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+    nav.responsive ul{
+        display: block !important;
+    }
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    }
+}
+@media screen and (max-width:700px){
+    .sobremi .fila{
+        display: block;
+    }
+    .sobremi .fila .col{
+        width: fit-content;
+    }
+
+    .skills .fila{
+        display: block;
+    }
+    .skills .fila .col{
+        width: 100%;
+    }
+    .skills .fila .col .barra-skill{
+        width: 100%;
+    }
+
+    .curriculum .fila{
+        display: block;
+    }
+    .curriculum .fila .col{
+        width: 90%;
+    }
+    .curriculum .fila .derecha{
+        margin-left: 20px;
+    }
+
+    .portfolio .galeria{
+        display: block;
+        width: 100%;
+    }
+    .portfolio .galeria .proyecto{
+        max-width: 100%;
+    }
+    .portfolio .galeria .proyecto img{
+        width: 100%;
+    }
+    .contacto .fila{
+        display: block;
+    }
+    .contacto .fila .col{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
