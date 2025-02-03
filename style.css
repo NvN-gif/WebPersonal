@@ -89,6 +89,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     display: none;
+    position: relative;
+    z-index: 100;
 }
 
 .contenedor-header header .nav {
@@ -167,10 +169,12 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: translate(0px);
     background-size: cover;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
+    
 }
+
 
 .sobremi .visible {
     transform: translateY(0);
@@ -204,6 +208,7 @@ body {
 .sobremi .fila {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .sobremi .fila .col {
@@ -302,25 +307,30 @@ body {
     width: 100%;
 }
 
+/*Responsive para moviles*/
+@media screen and (max-width: 700px) {
+    .sobremi .fila{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sobremi .fila .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+
+
 /* Seccion Skills */
 .skills {
     background-color: #8A2BE2;
     color: #00FFFF;
     padding: 50px 20px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: translate(0px);
 }
-
-.skills .visible {
-    transform: translateY(0%);
-    opacity: 1;
-}
-
 .skills .contenido-seccion {
     max-width: 1100px;
     margin: auto;
 }
-
 .skills h2 {
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
@@ -328,16 +338,16 @@ body {
     padding: 20px 0;
     text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título de habilidades */
 }
-
 .skills .fila {
     display: flex;
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan */
+    justify-content: space-between; /* Espaciado entre columnas */
 }
-
 .skills .fila .col {
-    width: 50%;
-    padding: 0 20px;
+    width: 50%; /* Ajustar a 50% para dos columnas */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
 }
-
 .skills .fila .col h3 {
     font-size: 28px;
     font-family: 'Montserrat', sans-serif;
@@ -345,26 +355,19 @@ body {
     text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados de habilidades */
 }
 
-.skills .skill > btn-download {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
+/* Responsivo para móviles */
+@media screen and (max-width: 700px) {
+    .skills .fila .col {
+        width: 100%; /* Hacer que cada columna ocupe el 100% del ancho en móviles */
+    }
 }
-
-/* Seccion Formacion */
+/* Sección Formación */
 .formacion {
     background-color: #00FFFF;
     color: #8A2BE2;
     padding: 5px 20px;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: translate(0px);
 }
-
-.formacion .visible {
-    transform: translateY(0%);
-    opacity: 1;
-}
-
 .formacion h2 {
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
@@ -372,117 +375,86 @@ body {
     padding: 20px 0;
     text-shadow: 0 0 15px #FF00FF; /* Efecto neón en el título de la sección */
 }
-
-.formacion .fila .col h3 {
+.formacion h3 {
+    font-size: 38px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en los encabezados de formación */
+}
+.formacion h4 {
     font-size: 28px;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 25px;
-    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los encabezados de formación */
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 0 0 15px #FF00FF; /* Efecto neón en los encabezados de formación */
 }
-
-.formacion .fila .item h4 {
-    font-size: 30px;
+.formacion .casa {
+    font-size: 28px;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #FF00FF; /* Efecto neón en los títulos de los cursos */
+    text-align: center;
+    padding: 20px 0;
+    color: #FF00FF;
+    text-shadow: 0 0 15px #FF00FF;
 }
-
-.formacion .contenido-seccion {
-    max-width: 1100px;
-    margin: auto;
+.formacion .fecha {
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+    color: #FF00FF;
+    text-shadow: 0 0 15px #FF00FF;
 }
-
 .formacion .fila {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos */
 }
-
 .formacion .fila .col {
-    width: 48%;
+    width: 100%; /* Por defecto, ocupará el 100% en móviles */
     padding: 0 20px;
+    margin-bottom: 20px; /* Espacio entre las columnas */
 }
 
-.formacion .fila .izquierda {
-    border-right: 2px solid #8A2BE2;
+/* Media query para pantallas grandes */
+@media (min-width: 768px) {
+    .formacion .fila .col {
+        width: calc(50% - 40px); /* Dos columnas en pantallas grandes */
+    }
 }
 
-.formacion .fila .derecha {
-    border-left: 2px solid #8A2BE2;
-}
-
-.formacion .centrar-imagen {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.5s;
+@media (min-width: 1024px) {
+    .formacion .fila .col {
+        width: calc(33.33% - 40px); /* Tres columnas en pantallas aún más grandes */
+    }
 }
 
 .formacion .fila .item {
     padding: 25px;
-    margin-bottom: 30px;
+    margin: 30px 0; /* Espacio vertical entre los elementos */
     position: relative;
     box-shadow: 0 0 15px #FF00FF; /* Efecto neón en los elementos de formación */
+    transition: transform 0.3s ease; /* Transición suave */
 }
-
-.formacion .fila .item .casa {
-    color: #FF00FF;
-    font-size: 22px;
-    font-weight: bold;
+.formacion .fila .item:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+.centrar-imagen {
     display: block;
-}
+    margin: 0 auto;
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}/* Estilos para pantallas más grandes */
+@media (min-width: 768px) {
+    .formacion .fila {
+        flex-direction: row; /* Cambiar a fila en pantallas más grandes */
+        justify-content: space-between; /* Espaciado entre columnas */
+    }
 
-.formacion .fila .item .fecha {
-    display: block;
-    color: #8A2BE2;
-    margin-bottom: 10px;
-}
-
-.formacion .fila .item p {
-    line-height: 24px;
-}
-
-.formacion .fila .item .conectori {
-    height: 2px;
-    background-color: #FF00FF;
-    width: 100%;
-    position: relative;
-    z-index: 5;
-    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; /* Efecto de brillo */
-    margin-top: 10px;
-}
-
-.formacion .fila .item .conectori .circuloi {
-    display: block;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: #FF00FF;
-    float: right;
-    position: relative;
-    bottom: 4px;
-}
-
-.formacion .fila .item .conectord {
-    height: 2px;
-    background-color: #FF00FF;
-    width: 100%; /* Ajustar al 100% del contenedor */
-    position: relative; /* Cambiado a relative para evitar superposiciones */
-    z-index: 5;
-    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; /* Efecto de brillo */
-    margin-top: 10px; /* Espaciado superior para evitar superposición con texto */
-}
-
-.formacion .fila .item .conectord .circulod {
-    display: block;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: #FF00FF;
-    float: right;
-    position: relative;
-    bottom: 4px;
+    .formacion .fila .col {
+        width: 48%; /* Ajustar el ancho para pantallas más grandes */
+        margin-bottom: 0; /* Eliminar el margen inferior en pantallas más grandes */
+    }
 }
 /*--Seccion Portfolio-->*/
 .portfolio {
@@ -639,46 +611,44 @@ z-index: 10;
 /*Footer*/
 footer {
     background-color: #8A2BE2;
-    display: inline-block;
-    text-decoration: none;
+    display: flex; /* Cambiar a flex para alinear horizontalmente */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+    padding: 20px; /* Añadir padding para separar del borde */
     border: 1px solid #8A2BE2;
-    border: 100%;
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    margin: 40px 5px;
-    font-size: 20px;
-    transition: .3;
 }
-footer .redes{
-    margin-bottom: 20px;
+
+footer .redes {
+    display: flex; /* Asegurarse de que las redes también estén en flex */
+    margin: 0; /* Eliminar el margen inferior */
 }
-footer .redes a{
-    display: inline-block;
+
+footer .redes a {
+    display: inline-flex; /* Cambiar a inline-flex para centrar el texto */
+    justify-content: center; /* Centrar el contenido dentro del enlace */
+    align-items: center; /* Centrar verticalmente */
     color: #ffffff;
     text-decoration: none;
     border: 1px solid #8A2BE2;
-    border-radius: 100%;
+    border-radius: 50%; /* Redondear los bordes */
     width: 42px;
     height: 42px;
-    line-height: 42px;
-    margin: 40px 5px;
+    margin: 0 5px; /* Ajustar el margen a los lados */
     font-size: 20px;
     transition: .3s;
 }
-footer .arriba{
+
+footer .arriba {
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #ff6600;
+    background-color: #01ff01;
     color: #00FFFF;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -25px;
+    position: relative; /* Cambiar a relativo para que se posicione dentro del footer */
+    top: 0; /* Ajustar la posición según sea necesario */
     border-radius: 50%;
-    text-align: 50px;
-    font: 18px;
+    text-align: center; /* Cambiar a center para centrar el texto */
+    font-size: 18px; /* Ajustar el tamaño de la fuente */
 }
 /* SECCION RESPONSIVE */
 @media screen and (max-width:980px){
